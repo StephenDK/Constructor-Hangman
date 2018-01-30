@@ -1,0 +1,22 @@
+{
+  "name": "constructor-hangman",
+  "version": "1.0.0",
+  "description": "This is a game of hangman played through a command line environment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StephenDK/Constructor-Hangman.git"
+  },
+  "author": "Stephen Klein",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StephenDK/Constructor-Hangman/issues"
+  },
+  "homepage": "https://github.com/StephenDK/Constructor-Hangman#readme",
+  "dependencies": {
+    "inquirer": "^5.0.1"
+  }
+}
