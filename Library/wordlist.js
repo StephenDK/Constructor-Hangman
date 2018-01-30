@@ -1,0 +1,32 @@
+// List of video games to export
+
+module.exports = [
+    "Devil May Cry",
+    "Tony Hawk's Pro Skater 4",
+    "Call of Duty Modern Warfare 2",
+    "Final Fantasy IX",
+    "BioShock Infinite",
+    "World of Goo",
+    "Metal Gear Solid V The Phantom Pain",
+    "Portal 2",
+    "Madden NFL 2003",
+    "The Last of Us",
+    "The Legend of Zelda Majora's Mask",
+    "The Legend of Zelda A Link to the Past",
+    "Halo 2",
+    "Gran Turismo 3",
+    "Red Dead Redemption",
+    "LittleBigPlanet",
+    "Grand Theft Auto Vice City",
+    "Grand Theft Auto San Andreas",
+    "Half Life",
+    "The Elder Scrolls V Skyrim",
+    "Mass Effect 2",
+    "BioShock",
+    "Metroid Prime",
+    "Perfect Dark",
+    "The Legend of Zelda Breath of the Wild",
+    "Super Mario Odyssey",
+    "Grand Theft Auto V",
+    "Super Mario Galaxy"
+];
