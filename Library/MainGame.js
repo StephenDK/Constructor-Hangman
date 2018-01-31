@@ -11,7 +11,7 @@ var words = require("./wordlist");
 
 
 // game constructor will keep score and control the flow of the game
-function PlayBall() {
+function Game() {
 
     // reference point for inquirer
     var self = this;
@@ -24,7 +24,9 @@ function PlayBall() {
                     type: "input",
                     name: "choice",
                     message: "Guess a letter!",
-
+                    validate: function(val) {
+                        return /[a-z1-9]/gi.test(val);
+                    }
                 }
             ]).then(function(val) {
                 // If the users guess is correct log correct for the user
@@ -62,10 +64,10 @@ function PlayBall() {
         this.askForLetter().then(function() {
             // if the user has no more guesses show the word
             if (self.guessesLeft < 1) {
-                console.log("No guesses left. The word was " + self.currentWord.getSolution());
+                console.log("No guesses left. The word was " + self.currentWord.getAnswer());
                 // Ask to play again
                 self.askToPlayAgain();
-            } else if (self.currentWord.guessedCorrectly()) {
+            } else if (self.currentWord.lettersGuessedCorrectly()) {
                 console.log("You got it right");
                 self.guessesLeft = 10;
                 self.nextWord();
@@ -96,4 +98,4 @@ function PlayBall() {
     };
 }
 
-module.exports = PlayBall;
+module.exports = Game;
