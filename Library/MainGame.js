@@ -2,6 +2,7 @@
 var inquirer = require("inquirer");
 // Get the words from the "wordlist.js" file
 var words = require("./wordlist");
+var Word
 
 
 
@@ -57,9 +58,17 @@ function Game() {
         this.askForLetter().then(function() {
             // if the user has no more guesses show the word
             if (self.guessesLeft < 1) {
-                console.log("No guesses left. The word was " + self.currentWord.getSolution())
+                console.log("No guesses left. The word was " + self.currentWord.getSolution());
+                // Ask to play again
+                self.askToPlayAgain();
+            } else if (self.currentWord.guessedCorrectly()) {
+                console.log("You got it right");
+                self.guessesLeft = 10;
+                self.nextWord();
+            } else {
+                self.makeGuess();
             }
-        })
+        });
     };
 
     // when game is over display "thanks for playing"
