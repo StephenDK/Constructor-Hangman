@@ -1,4 +1,5 @@
 //  require letter
+var letter = require("./Letter");
 
 // The word splitter constructor will take the selected word and split 
 function Word(word) {
@@ -6,3 +7,10 @@ function Word(word) {
         return new Letter(char);
     });
 }
+
+// add toString() method to the word
+Word.prototype.toString = function() {
+    return this.letters.join(' ');
+};
+
+// 

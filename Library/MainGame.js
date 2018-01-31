@@ -1,13 +1,17 @@
 //  Get the inquirer npm 
 var inquirer = require("inquirer");
+
+//Get the word constructor to break down the word
+var Word = require("./WordFormatter"); 
+
 // Get the words from the "wordlist.js" file
 var words = require("./wordlist");
-var Word
+
 
 
 
 // game constructor will keep score and control the flow of the game
-function Game() {
+function PlayBall() {
 
     // reference point for inquirer
     var self = this;
@@ -91,3 +95,5 @@ function Game() {
         this.makeGuess();
     };
 }
+
+module.exports = PlayBall;
