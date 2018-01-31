@@ -33,7 +33,34 @@ function Game() {
                     console.log(self.guessesLeft + " guesses remaining!!")
                 }
             });
-    }
+    };
+
+    // Prompt user if they would like to play again
+    this.askToPlayAgain = function() {
+        inquirer.prompt([
+            {
+                type: "confirm",
+                name: "choice",
+                message: "Do you want to play again?"
+            }
+        ]).then(function(val) {
+            // If the user pick yes play again else end the game
+            if (val.choice) {
+                self.play();
+            } else {
+                self.gameOver();
+            }
+        });
+    };
+
+    this.makeGuess = function() {
+        this.askForLetter().then(function() {
+            // if the user has no more guesses show the word
+            if (self.guessesLeft < 1) {
+                console.log("No guesses left. The word was " + self.currentWord.getSolution())
+            }
+        })
+    };
 
     // when game is over display "thanks for playing"
     this.gameOver = function() {
@@ -50,6 +77,8 @@ function Game() {
     this.nextWord = function() {
         // Set variable to random word
         var randomWord = words[Math.floor(Math.random() * words.length)];
-        console.log(randomWord);
+        this.currentWord = new Word(randomWord);
+        console.log("Current word: " + this.currentWord);
+        this.makeGuess();
     };
 }
